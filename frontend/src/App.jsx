@@ -8,10 +8,10 @@ function App() {
   const [ todos, setTodos ] = useState([]);
 
 
-  const getTodos = () => {
-    axios.get("http://localhost:3000/todos")
-    .then((response) => {
-      setTodos(response)
+  const getTodos =  () => {
+    axios.get("http://localhost:3000/todos").then((response) => {
+      console.log(response.data)
+      setTodos(response.data.response)
     })
   }
   useEffect(() => getTodos(), [])
